@@ -1,15 +1,15 @@
 from flask import Blueprint, request, jsonify
-from .models import db, Review  # Assuming you have a model for reviews
+from .models import db, Review  # Import db and Review model from models.py
 
 app_routes = Blueprint('app_routes', __name__)
 
 # Add a review (C)
 @app_routes.route('/add_review', methods=['POST'])
 def add_review():
-    data = request.get_json()
-    new_review = Review(product_name=data['product_name'], review=data['review'])
-    db.session.add(new_review)
-    db.session.commit()
+    data = request.get_json()  # Get the data from the request
+    new_review = Review(product_name=data['product_name'], review=data['review'])  # Create a new Review object
+    db.session.add(new_review)  # Add the review to the session
+    db.session.commit()  # Commit the transaction to the database
     return jsonify({"message": "Review added successfully!"}), 201
 
 # Read all reviews (R)

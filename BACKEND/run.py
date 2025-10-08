@@ -1,4 +1,7 @@
-from app import app  # Import the Flask app from the app package
+from app import create_app
 
-if __name__ == "__main__":
-    app.run(debug=True)  # Run the Flask app in debug mode
+# Initialize the app using the create_app function
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)  # Start the Flask app

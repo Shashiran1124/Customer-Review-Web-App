@@ -1,0 +1,18 @@
+/* Add any styling you need */
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin: 20px;
+}
+
+#reviews {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
